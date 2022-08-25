@@ -22,6 +22,10 @@ type ManagedClusterSetBindingValidatingAdmissionHook struct {
 	kubeClient kubernetes.Interface
 }
 
+func (h *ManagedClusterSetBindingValidatingAdmissionHook) SetKubeClient(c kubernetes.Interface) {
+	h.kubeClient = c
+}
+
 // ValidatingResource is called by generic-admission-server on startup to register the returned REST resource through which the
 // webhook is accessed by the kube apiserver.
 func (a *ManagedClusterSetBindingValidatingAdmissionHook) ValidatingResource() (plural schema.GroupVersionResource, singular string) {

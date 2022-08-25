@@ -16,3 +16,4 @@ e2e.test
 *.out
 _output/
 .idea/
+.vscode/
